@@ -2,7 +2,7 @@
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 # More info on Python, GitHub Actions, and Azure App Service: https://aka.ms/python-webapps-actions
 
-name: Build and deploy Python app to Azure Web App - wordish
+name: Build and deploy Python app to Azure Web App - Wordish
 
 on:
   push:
@@ -22,7 +22,7 @@ jobs:
       - name: Set up Python version
         uses: actions/setup-python@v5
         with:
-          python-version: '3.9'
+          python-version: '3.13'
 
       - name: Create and start virtual environment
         run: |
@@ -68,14 +68,14 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_78BF9C2A930D479093A4FF06BE8EB72C }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_0C646BFCCEEB4D2F8F8CCE66C7131132 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_126612E86EAA489BAD25B28C40408EB6 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_1E630170EC254DD7BE7C6C030B5C981A }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_A5821C069DDC469496C8E9AC639DF53A }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_9F84FBA503974DF69262DA1E0113B91C }}
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v3
         id: deploy-to-webapp
         with:
-          app-name: 'wordish'
+          app-name: 'Wordish'
           slot-name: 'Production'
           
